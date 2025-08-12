@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#grid-container {
+    margin-top: 30px;
+    margin-left: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: rgb(41, 41, 41) solid 1px;
+    width: 600px; 
+    height: auto;
+}
