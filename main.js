@@ -10,10 +10,7 @@ for (let i = 0; i < gridSize * gridSize; i++) {
     Object.assign(cell.style, {
         width: `${cellSize}px`,
         height: `${cellSize}px`,
-        border: 'black dashed 1px'
-        boxSizing: 'border-box'
+        border: '0.5px solid green', // optional: cell border
     });
-    
     gridContainer.appendChild(cell);
-
 }

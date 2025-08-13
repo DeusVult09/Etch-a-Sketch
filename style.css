@@ -1,16 +1,14 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 #grid-container {
-    margin-top: 30px;
-    margin-left: 60px;
+    margin: 60px 0 0 160px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    border: rgb(41, 41, 41) solid 1px;
-    width: 600px; 
-    height: auto;
+    width: 600px;
+    height: 600px;
+    outline: 1px solid black;
 }
