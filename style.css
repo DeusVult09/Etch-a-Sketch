@@ -5,6 +5,8 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,16 +14,26 @@
 }
 
 body {
-
+    
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 95vh;
-    background: #eee;
+    height: 100vh;
+    background: #e8ffe2;
     font-family: sans-serif;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 30px;
 }
+
+.etch-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+
 
 .etch-a-sketch {
 
@@ -30,26 +42,26 @@ body {
     border-radius: 20px;
     padding: 40px;
     position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: red;
+    background-color: rgba(217, 2, 2, 0.959);
 
 }
 
 @keyframes shake {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  20% { transform: translate(-10px, 0) rotate(-2deg); }
-  40% { transform: translate(10px, 0) rotate(2deg); }
-  60% { transform: translate(-10px, 0) rotate(-2deg); }
-  80% { transform: translate(10px, 0) rotate(2deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
+    0% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(-10px, 0) rotate(-2deg); }
+    40% { transform: translate(10px, 0) rotate(2deg); }
+    60% { transform: translate(-10px, 0) rotate(-2deg); }
+    80% { transform: translate(10px, 0) rotate(2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
 }
 
 .etch-a-sketch.shake {
-  animation: shake 0.3s ease-in-out;
+    animation: shake 0.3s ease-in-out;
 }
 
 
@@ -64,9 +76,9 @@ body {
 }
 
 .logo-title {
-    margin-top: 20px;
-    font-family: "Archive Round Face", cursive;
-    font-size: 2.3rem;
+    margin-top: 10px;
+    font-family: "Annie Use Your Telescope", cursive;
+    font-size: 2.2rem;
     color: rgb(255, 242, 2);
     text-shadow: 4px 2px 4px rgba(0,0,0,0.3);
 }
@@ -82,49 +94,70 @@ body {
     box-shadow: inset -4px -4px 10px rgba(0,0,0,0.2),
     inset 4px 4px 10px rgba(255,255,255,0.7),
     0 4px 8px rgba(0,0,0,0.4);
+    cursor: pointer;
 
 }
 
-.knob.left {
+#grid-size-control {
+    display: none;
+}
+
+.left {
     left: 45px;
 }
 
-.knob.right {
+.right {
     right: 45px;
 }
 
-.controls {
-    margin-top: 10px;
+.knob::before {
+    content: "";
+    position: absolute;
+    top: 10px;   
+    left: 50%;
+    transform: translateX(-50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
 }
 
+.knob.left::before {
+    background: green;   
+}
+
+.knob.right::before {
+    background: blue;
+}
+
+
+
 button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background: #ccba31;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    padding: 10px 10px;
+    color: rgb(1, 128, 1);
+    border: none;
+    border-radius: 50px;
+    background: rgb(255, 242, 2);
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 button:hover {
-  background: #f0f0f0;
+    background: #f0f0f0;
 }
 
 
 footer {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 10px;
     font-size: 18px;
-    margin-top: 5%;
-    color:#0ECCA3;
-    font-family: 'Inconsolata', monospace;
+    color: rgb(17, 16, 16);
+    font-family: "Annie Use Your Telescope", cursive;
 
 }
 
 .footer-img-placeholder img {
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 }

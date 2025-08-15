@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-Sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./main.js" defer></script>
-  </head>
-  <body>
-    <div class="etch-a-sketch">
-      <div class="screen" id="grid-container"></div>
-      <div class="logo-title">Etch-A-Sketch</div>
-      <div class="knobs">
-        <div class="knob left">
-          <div class="dot"></div>
+</head>
+
+<body>
+    <div class="etch-wrapper">
+        <div class="etch-a-sketch">
+            <div class="screen" id="grid-container"></div>
+            <div class="logo-title">Etch-A-Sketch</div>
+            <div class="knobs">
+                <div class="knob left"></div>
+                <div class="knob right">
+                    <input type="range" id="grid-size-control" min="2" max="50" step="4" value="16" />
+                </div>
+                <div class="controls">
+                    <button id="clear">Shake to Clear</button>
+                </div>
+            </div>
         </div>
-        <div class="knob right">
-          <div class="dot"></div>
+
+        <div class="modeselector">
+            <form>
+                <label>
+                    <input type="checkbox" id="rainbowmodecheckbox" name="rainbowmodecheckbox" /> Rainbow mode
+                </label><br />
+                <label>
+                    <input type="checkbox" id="classicmodecheckbox" name="classicmodecheckbox" /> Classic mode
+                </label>
+            </form>
         </div>
-        <div class="controls">
-          <button id="clear">Shake to Clear</button>
-        </div>
-        <footer>
-          © Created by Zara. 2025
-          <div class="footer-img-placeholder">
+
+    <footer>© Created by Zara. 2025
+        <div class="footer-img-placeholder">
             <img id="github" src="./img assets/github.png" />
-          </div>
-        </footer>
-      </div>
+        </div>
+    </footer>  
+
     </div>
-  </body>
+
+
+</body>
+
 </html>
