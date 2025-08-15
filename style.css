@@ -1,14 +1,130 @@
+@font-face {
+    font-family: "Archive Round Face Script";
+    src: url("./font/fonnts.com-830360/") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#grid-container {
-    margin: 60px 0 0 160px;
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    background: #eee;
+    font-family: sans-serif;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.etch-a-sketch {
+
+    width: 600px;
+    height: 650px;
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: red;
+
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-10px, 0) rotate(-2deg); }
+  40% { transform: translate(10px, 0) rotate(2deg); }
+  60% { transform: translate(-10px, 0) rotate(-2deg); }
+  80% { transform: translate(10px, 0) rotate(2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.etch-a-sketch.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+
+
+.screen {
+    background: white;
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
-    width: 600px;
-    height: 600px;
-    outline: 1px solid black;
+    outline: 5px inset #ccc;
+}
+
+.logo-title {
+    margin-top: 20px;
+    font-family: "Archive Round Face", cursive;
+    font-size: 2.3rem;
+    color: rgb(255, 242, 2);
+    text-shadow: 4px 2px 4px rgba(0,0,0,0.3);
+}
+
+.knob {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    bottom: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 4px solid #aaa;
+    box-shadow: inset -4px -4px 10px rgba(0,0,0,0.2),
+    inset 4px 4px 10px rgba(255,255,255,0.7),
+    0 4px 8px rgba(0,0,0,0.4);
+
+}
+
+.knob.left {
+    left: 45px;
+}
+
+.knob.right {
+    right: 45px;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #ccba31;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    margin-top: 5%;
+    color:#0ECCA3;
+    font-family: 'Inconsolata', monospace;
+
+}
+
+.footer-img-placeholder img {
+  width: 24px;
+  height: 24px;
 }

@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="./main.js" defer></script>
-</head>
-<body>
-   <div id="grid-container"></div> 
-</body>
+  </head>
+  <body>
+    <div class="etch-a-sketch">
+      <div class="screen" id="grid-container"></div>
+      <div class="logo-title">Etch-A-Sketch</div>
+      <div class="knobs">
+        <div class="knob left">
+          <div class="dot"></div>
+        </div>
+        <div class="knob right">
+          <div class="dot"></div>
+        </div>
+        <div class="controls">
+          <button id="clear">Shake to Clear</button>
+        </div>
+        <footer>
+          © Created by Zara. 2025
+          <div class="footer-img-placeholder">
+            <img id="github" src="./img assets/github.png" />
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
 </html>
