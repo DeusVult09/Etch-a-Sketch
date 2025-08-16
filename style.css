@@ -60,8 +60,12 @@ body {
     text-transform: uppercase;
 }
 
-.etch-a-sketch {
+.img {
+    margin-left: -30px;
+    margin-top: 20px;
+}
 
+.etch-a-sketch {
     width: 600px;
     height: 650px;
     border-radius: 20px;
@@ -73,8 +77,17 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: #d90202f5;
-
+    position: relative;
+    flex-shrink: 0;
 }
+
+.display {
+    position: absolute;
+    transform: translateY(-33px);
+    color: hsl(57, 100%, 50%);
+    font-size: 18px;
+ }
+
 
 @keyframes shake {
     0% { transform: translate(0, 0) rotate(0deg); }
@@ -104,7 +117,7 @@ body {
     margin-top: 10px;
     font-family: "Annie Use Your Telescope", cursive;
     font-size: 2.2rem;
-    color: rgb(255, 242, 2);
+    color: hsl(57, 100%, 50%);
     text-shadow: 4px 2px 4px rgba(0,0,0,0.3);
 }
 
@@ -155,11 +168,11 @@ body {
 }
 
 .knob.left::before {
-    background: green;   
+    background: #008000;   
 }
 
 .knob.right::before {
-    background: blue;
+    background: #0000ff;
 }
 
 

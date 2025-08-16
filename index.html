@@ -14,20 +14,28 @@
 
 <body>
     <div class="etch-wrapper">
+        <div class="mode-and-img-container">
+            <div class="modeselector">
+                <form>
+                    <label class="mode-label">
+                        <input type="checkbox" id="rainbowmodecheckbox" name="rainbowmodecheckbox" />
+                        Rainbow mode </label><br />
+                    <label class="mode-label">
+                        <input type="checkbox" id="classicmodecheckbox" name="classicmodecheckbox" />
+                        Classic mode
+                    </label>
+                </form>
+            </div>
 
-        <div class="modeselector">
-            <form>
-                <label class="mode-label">
-                    <input type="checkbox" id="rainbowmodecheckbox" name="rainbowmodecheckbox" /> Rainbow mode
-                </label><br />
-                <label class="mode-label">
-                    <input type="checkbox" id="classicmodecheckbox" name="classicmodecheckbox" /> Classic mode
-                </label>
-            </form>
+            <div class="img">
+                <img src="./img assets/Frame 2.png" alt="sticky notes" width="292" height="280"/>
+            </div>
         </div>
 
         <div class="etch-a-sketch">
-            <div class="screen" id="grid-container"></div>
+            <p class="display">16 x 16</p>
+            <div class="screen" id="grid-container">
+            </div>
             <div class="logo-title">Etch-A-Sketch</div>
             <div class="knobs">
                 <div class="knob left"></div>
@@ -41,15 +49,12 @@
         </div>
     </div>
 
-    <footer>© Created by Zara. 2025
+    <footer>
+        © Created by Zara. 2025
         <div class="footer-img-placeholder">
             <img id="github" src="./img assets/github.png" />
         </div>
     </footer>
-
-
-
-
 </body>
 
 </html>
