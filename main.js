@@ -5,7 +5,7 @@ const clearBtn = document.getElementById('clear');
 const gridSizeControl = document.getElementById('grid-size-control')
 const knobLeft = document.querySelector('.left');
 const knobRight = document.querySelector('.right');
-
+const modeSelector = document.querySelector('.modeselector')
 
 const containerSize = parseInt(getComputedStyle(gridContainer).width);
 
@@ -21,11 +21,7 @@ function createGrid(size) {
         cell.style.height = `${cellSize}px`;
         cell.style.border = '0.6px dotted green';
 
-        cell.addEventListener('mouseenter', () => {
-            cell.style.backgroundColor = 'black';
-        });
-
-        cell.addEventListener('click', () => {
+        cell.addEventListener('mouseover', () => {
             cell.style.backgroundColor = 'black';
         });
 
