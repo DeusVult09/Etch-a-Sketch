@@ -5,7 +5,10 @@ const clearBtn = document.getElementById('clear');
 const gridSizeControl = document.getElementById('grid-size-control')
 const knobLeft = document.querySelector('.left');
 const knobRight = document.querySelector('.right');
-const modeSelector = document.querySelector('.modeselector')
+const modeSelector = document.querySelector('.modeselector');
+const sizeDisplay = document.querySelector('.display');
+const rainbowMode = document.getElementById('rainbowmodecheckbox');
+const classicMode = document.getElementById('classicmodecheckbox');
 
 const containerSize = parseInt(getComputedStyle(gridContainer).width);
 
@@ -29,20 +32,8 @@ function createGrid(size) {
     }
 }
 
-
-
-
+// function to 
 createGrid(parseInt(gridSizeControl.value));
-
-
-gridSizeControl.addEventListener("input", (e) => {
-    const size = parseInt(e.target.value);
-    createGrid(size);
-
-    
-    const degrees = (size - 2) * (270 / (50 - 2));
-    e.target.parentElement.style.transform = `rotate(${degrees}deg)`;
-});
 
 
 clearBtn.addEventListener('click', () => {
@@ -55,3 +46,10 @@ clearBtn.addEventListener('click', () => {
     });
 });
 
+// function to erase 
+
+knobLeft.addEventListener('click', () => {
+     cell.addEventListener('click', () => {
+            cell.style.backgroundColor = 'white';
+        });
+})
