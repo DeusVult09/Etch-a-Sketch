@@ -53,7 +53,7 @@ body {
 }
 
 .mode-label {
-    
+
     color: #d90202f5;     
     font-weight: 900;
     font-size: 28px;
@@ -120,7 +120,15 @@ body {
     inset 4px 4px 10px rgba(255,255,255,0.7),
     0 4px 8px rgba(0,0,0,0.4);
     cursor: pointer;
+    transition: all 0.15s ease-in-out;
 
+}
+
+.left:hover {
+    box-shadow: 
+        inset 4px 4px 10px rgba(0,0,0,0.3),   /* deeper dark inset */
+        inset -4px -4px 10px rgba(255,255,255,0.6); /* highlight opposite */
+    transform: translateY(1px);
 }
 
 #grid-size-control {
