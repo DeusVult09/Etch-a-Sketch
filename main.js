@@ -10,10 +10,12 @@ const sizeDisplay = document.querySelector('.display');
 const rainbowMode = document.getElementById('rainbowmodecheckbox');
 const classicMode = document.getElementById('classicmodecheckbox');
 
+let rainbowColors = ['#FF0000', '#FFA500', ' #FFFF00', '#008000', '#0000FF', '#4B0082', '#EE82EE'];
+
 const containerSize = parseInt(getComputedStyle(gridContainer).width);
 
 function createGrid(size) {
-    gridContainer.innerHTML = ""; 
+    gridContainer.innerHTML = "";
 
     const totalNum = size * size;
     const cellSize = containerSize / size;
@@ -24,17 +26,55 @@ function createGrid(size) {
         cell.style.height = `${cellSize}px`;
         cell.style.border = '0.6px dotted green';
 
+        // this is for hover & erase. i decided to combine everything. Not sure if it was a correct decision
+
         cell.addEventListener('mouseover', () => {
-            cell.style.backgroundColor = 'black';
+            if (!eraseMode && !rainbowModeOn && !classicModeOn) return;
+
+            if (eraseMode) {
+                cell.style.backgroundColor = 'white';
+            } else if (rainbowModeOn) {
+                const randomColor = rainbowColors[Math.floor(Math.random() * rainbowColors.length)];
+                cell.style.backgroundColor = randomColor;
+            } else if (classicModeOn) {
+                cell.style.backgroundColor = 'black';
+            }
         });
 
         gridContainer.appendChild(cell);
+
     }
+
 }
 
-// function to 
+
+// erase mode assigned to the left knob
+
+let eraseMode = false;
+
+knobLeft.addEventListener('click', () => {
+    eraseMode = !eraseMode;
+});
+
+// rainbow/classic modes checking
+
+let rainbowModeOn = false;
+let classicModeOn = false;
+
+rainbowMode.addEventListener('change', () => {
+    rainbowModeOn = rainbowMode.checked;
+});
+
+classicMode.addEventListener('change', () => {
+    classicModeOn = classicMode.checked;
+});
+
+
+// function to rotate the right knob
 createGrid(parseInt(gridSizeControl.value));
 
+
+// some itty-bitty animation
 
 clearBtn.addEventListener('click', () => {
     etchASketch.classList.add('shake');
@@ -46,10 +86,3 @@ clearBtn.addEventListener('click', () => {
     });
 });
 
-// function to erase 
-
-knobLeft.addEventListener('click', () => {
-     cell.addEventListener('click', () => {
-            cell.style.backgroundColor = 'white';
-        });
-})
