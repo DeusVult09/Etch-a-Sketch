@@ -73,6 +73,16 @@ classicMode.addEventListener('change', () => {
 // function to rotate the right knob
 createGrid(parseInt(gridSizeControl.value));
 
+sizeDisplay.textContent = gridSizeControl.value;
+
+gridSizeControl.addEventListener('input', () => {
+    const newSize = parseInt(gridSizeControl.value);
+
+    sizeDisplay.textContent = newSize;
+
+    createGrid(newSize);
+});
+
 
 // some itty-bitty animation
 
