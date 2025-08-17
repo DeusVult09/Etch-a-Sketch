@@ -50,19 +50,19 @@ function createGrid(size) {
 
 }
 
-
 // erase mode assigned to the left knob
 
 let eraseMode = false;
+let rainbowModeOn = false;
+let classicModeOn = false;
 
 knobLeft.addEventListener('click', () => {
     eraseMode = !eraseMode;
+    rainbowModeOn = true;
+    classicModeOn = true;
 });
 
 // rainbow/classic modes checking
-
-let rainbowModeOn = false;
-let classicModeOn = false;
 
 rainbowMode.addEventListener('change', () => {
     rainbowModeOn = rainbowMode.checked;
@@ -96,20 +96,18 @@ closeBtn.addEventListener('click', (e) => {
 // right knob click function 
 
 gridSizeControl.addEventListener('input', () => {
-  const newSize = parseInt(gridSizeControl.value);
-  sizeDisplay.textContent = `${newSize} x ${newSize}`;
-  createGrid(newSize);
+    const newSize = parseInt(gridSizeControl.value);
+    sizeDisplay.textContent = `${newSize} x ${newSize}`;
+    createGrid(newSize);
 
 });
 
 const slider = document.getElementById('grid-size-control');
 
 slider.addEventListener('input', () => {
-  const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
-  slider.style.background = `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
+    const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+    slider.style.background = `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
 });
-
-
 
 // some itty-bitty animation
 
@@ -121,14 +119,4 @@ clearBtn.addEventListener('click', () => {
     etchASketch.addEventListener('animationend', () => {
         etchASketch.classList.remove('shake');
     });
-});
-
-
-knobRight.addEventListener('click', () => {
-    // Show popup
-    popup.classList.add('show');
-
-    // Play audio
-    audio.currentTime = 0; // rewind to start
-    audio.play();
 });
