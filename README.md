@@ -16,11 +16,6 @@
 - using audio playback in response to user interaction
 - updating UI elements (grid size display, slider fill).
 
-State Management
-
-Mode toggling logic to prevent conflicting behaviors.
-
-Example: ensuring only one of erase, rainbow, or classic mode is active at a time.
 
 # Reflection
 
