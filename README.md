@@ -1,6 +1,6 @@
 ## Etch-a-Sketch
 
-# The goal of the project, as part of the Odin Project Curriculum, was to recreate web version of the classic Etch-A-Sketch game where users choose grid size and adjust it, draw cells in two modes: classic mode and rainbow mode, use eraser to clear cells, clear the entire grid with a shake animation, etc.
+The goal of the project, as part of the Odin Project Curriculum, was to recreate web version of the classic Etch-A-Sketch game where users choose grid size and adjust it, draw cells in two modes: classic mode and rainbow mode, use eraser to clear cells, clear the entire grid with a shake animation, etc.
 
 # Skills Demonstrated
 
