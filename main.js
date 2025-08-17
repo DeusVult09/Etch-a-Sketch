@@ -5,6 +5,8 @@ const clearBtn = document.getElementById('clear');
 const gridSizeControl = document.getElementById('grid-size-control')
 const knobLeft = document.querySelector('.left');
 const knobRight = document.querySelector('.right');
+const popup = document.getElementById('popup');
+const clsBtn = document.getElementById('closeBtn');
 const modeSelector = document.querySelector('.modeselector');
 const sizeDisplay = document.querySelector('.display');
 const rainbowMode = document.getElementById('rainbowmodecheckbox');
@@ -73,22 +75,6 @@ classicMode.addEventListener('change', () => {
 
 createGrid(parseInt(gridSizeControl.value));
 sizeDisplay.textContent = `${gridSizeControl.value} x ${gridSizeControl.value}`;
-
-
-gridSizeControl.addEventListener('input', () => {
-    const newSize = parseInt(gridSizeControl.value);
-    const maxVal = parseInt(gridSizeControl.max);
-
-    // Update display
-    sizeDisplay.textContent = `${newSize} x ${newSize}`;
-
-    // Rotate knob (map range to 0–270°)
-    const rotation = (newSize / maxVal) * 270;
-    knobRight.style.transform = `rotate(${rotation}deg)`;
-
-    // Redraw grid
-    createGrid(newSize);
-});
 
 
 // some itty-bitty animation

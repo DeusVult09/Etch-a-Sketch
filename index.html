@@ -28,7 +28,7 @@
             </div>
 
             <div class="img">
-                <img src="./img assets/Frame 3.png" alt="sticky notes" width="292" height="280"/>
+                <img src="./img assets/Frame 3.png" alt="sticky notes" width="292" height="280" />
             </div>
         </div>
 
@@ -40,7 +40,11 @@
             <div class="knobs">
                 <div class="knob left"></div>
                 <div class="knob right">
-                    <input type="range" id="grid-size-control" min="2" max="50" step="4" value="16" />
+                    <div id="popup" class="popup hidden">
+                        <span id="closeBtn" class="close">&times;</span>
+                        <h2 id="popup-title">Choose the grid size</h2>
+                        <input type="range" id="grid-size-control" min="2" max="50" step="4" value="16" />
+                    </div>
                 </div>
                 <div class="controls">
                     <button id="clear">Shake to Clear</button>
