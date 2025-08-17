@@ -144,17 +144,30 @@ body {
     transform: translateY(1px);
 }
 
-#right-knob.hovered {
-     box-shadow: 
-        inset 4px 4px 10px rgba(0,0,0,0.3),
-        inset -4px -4px 10px rgba(255,255,255,0.6); 
-    transform: translateY(1px);
-}
-
-
 #grid-size-control {
-    display: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 60%;                
+    height: 10px;              
+    background: #ddd;          
+    margin: 20px auto;
+    display: block;
 }
+
+#grid-size-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    border-radius: 50%;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+
+
 
 .left {
     left: 45px;
@@ -190,8 +203,8 @@ body {
     transform: translate(-50%, -50%);
     background: white;
     padding: 20px;
-    border: 2px solid #fff202;;
-    border-radius: 10px;
+    border: solid 5px #eadf15;;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     z-index: 1000;
     display: none; 

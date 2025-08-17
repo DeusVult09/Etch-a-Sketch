@@ -11,6 +11,7 @@ const modeSelector = document.querySelector('.modeselector');
 const sizeDisplay = document.querySelector('.display');
 const rainbowMode = document.getElementById('rainbowmodecheckbox');
 const classicMode = document.getElementById('classicmodecheckbox');
+const audio = document.querySelector('.audio');
 
 let rainbowColors = ['#FF0000', '#FFA500', ' #FFFF00', '#008000', '#0000FF', '#4B0082', '#EE82EE'];
 
@@ -71,14 +72,20 @@ classicMode.addEventListener('change', () => {
     classicModeOn = classicMode.checked;
 });
 
-// function to rotate the right knob
+// popup window on/off
 
 createGrid(parseInt(gridSizeControl.value));
 sizeDisplay.textContent = `${gridSizeControl.value} x ${gridSizeControl.value}`;
 
 
 knobRight.addEventListener('click', () => {
+    audio.currentTime = 0;
+    audio.play();
     popup.classList.add('show');
+});
+
+popup.addEventListener('click', (e) => {
+    e.stopPropagation();
 });
 
 closeBtn.addEventListener('click', (e) => {
@@ -86,12 +93,22 @@ closeBtn.addEventListener('click', (e) => {
     popup.classList.remove('show');
 });
 
+// right knob click function 
+
 gridSizeControl.addEventListener('input', () => {
   const newSize = parseInt(gridSizeControl.value);
   sizeDisplay.textContent = `${newSize} x ${newSize}`;
   createGrid(newSize);
 
 });
+
+const slider = document.getElementById('grid-size-control');
+
+slider.addEventListener('input', () => {
+  const value = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+  slider.style.background = `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
+});
+
 
 
 // some itty-bitty animation
@@ -106,3 +123,12 @@ clearBtn.addEventListener('click', () => {
     });
 });
 
+
+knobRight.addEventListener('click', () => {
+    // Show popup
+    popup.classList.add('show');
+
+    // Play audio
+    audio.currentTime = 0; // rewind to start
+    audio.play();
+});
