@@ -25,8 +25,10 @@ One of the trickiest parts was managing the eraser mode — it taught me how imp
 
 If I were to keep improving it, I’d like to make it mobile-friendly, maybe change the input checkboxes to radio inputs, maybe even let users save their sketches.
 
+Live preview of the game https://deusvult09.github.io/Etch-a-Sketch/
+
 # Attribution
 
-Popup border style from https://codepen.io/tmrDevelops/pen/VeRvKX
-Button click sound from (royalty free) https://pixabay.com/sound-effects/search/button-click/
-Sticky notes and Github logo from https://www.flaticon.com/search?word=github
+- Popup border style from https://codepen.io/tmrDevelops/pen/VeRvKX
+- Button click sound from (royalty free) https://pixabay.com/sound-effects/search/button-click/
+- Sticky notes and Github logo from https://www.flaticon.com/search?word=github
