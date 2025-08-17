@@ -69,17 +69,24 @@ classicMode.addEventListener('change', () => {
     classicModeOn = classicMode.checked;
 });
 
-
 // function to rotate the right knob
-createGrid(parseInt(gridSizeControl.value));
 
-sizeDisplay.textContent = gridSizeControl.value;
+createGrid(parseInt(gridSizeControl.value));
+sizeDisplay.textContent = `${gridSizeControl.value} x ${gridSizeControl.value}`;
+
 
 gridSizeControl.addEventListener('input', () => {
     const newSize = parseInt(gridSizeControl.value);
+    const maxVal = parseInt(gridSizeControl.max);
 
-    sizeDisplay.textContent = newSize;
+    // Update display
+    sizeDisplay.textContent = `${newSize} x ${newSize}`;
 
+    // Rotate knob (map range to 0–270°)
+    const rotation = (newSize / maxVal) * 270;
+    knobRight.style.transform = `rotate(${rotation}deg)`;
+
+    // Redraw grid
     createGrid(newSize);
 });
 
