@@ -4,9 +4,9 @@ const etchASketch = document.querySelector('.etch-a-sketch');
 const clearBtn = document.getElementById('clear');
 const gridSizeControl = document.getElementById('grid-size-control')
 const knobLeft = document.querySelector('.left');
-const knobRight = document.querySelector('.right');
+const knobRight = document.querySelector('#right-knob');
 const popup = document.getElementById('popup');
-const clsBtn = document.getElementById('closeBtn');
+const closeBtn = document.getElementById('closeBtn');
 const modeSelector = document.querySelector('.modeselector');
 const sizeDisplay = document.querySelector('.display');
 const rainbowMode = document.getElementById('rainbowmodecheckbox');
@@ -75,6 +75,23 @@ classicMode.addEventListener('change', () => {
 
 createGrid(parseInt(gridSizeControl.value));
 sizeDisplay.textContent = `${gridSizeControl.value} x ${gridSizeControl.value}`;
+
+
+knobRight.addEventListener('click', () => {
+    popup.classList.add('show');
+});
+
+closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    popup.classList.remove('show');
+});
+
+gridSizeControl.addEventListener('input', () => {
+  const newSize = parseInt(gridSizeControl.value);
+  sizeDisplay.textContent = `${newSize} x ${newSize}`;
+  createGrid(newSize);
+
+});
 
 
 // some itty-bitty animation
