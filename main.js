@@ -58,8 +58,6 @@ let classicModeOn = false;
 
 knobLeft.addEventListener('click', () => {
     eraseMode = !eraseMode;
-    rainbowModeOn = true;
-    classicModeOn = true;
 });
 
 // rainbow/classic modes checking
